@@ -39,53 +39,36 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        leading: Icon(Icons.yard_rounded, color: Colors.red),
       ),
-      body: Center(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          margin: EdgeInsets.all(50.0),
-          padding: EdgeInsets.all(50.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18.0),
-            color: Colors.red,
-          ),
-          child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            padding: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18.0),
-              color: Colors.orange,
-            ),
+      body: Stack(
+        children: [
+          Center(
             child: Text(
-              "João",
+              "João!!",
               style: TextStyle(
-                color: Colors.black87,
-                fontSize: 67,
+                fontSize: 78,
+                backgroundColor: Colors.green.withValues(alpha: 0.3),
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+          ListTile(
+            leading: Icon(Icons.javascript_outlined, size: 35,),
+            tileColor: Colors.purple,
+            title: Text("Jo~ao"),
+            trailing: Text("trailing txt"),
+            onTap: () {
+              print("voce clicou dos santos!");
+            },
+          )
+        ],
       ),
     );
   }
