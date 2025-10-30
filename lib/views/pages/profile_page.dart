@@ -1,3 +1,4 @@
+import 'package:carte/data/constants.dart';
 import 'package:carte/data/notifiers.dart';
 import 'package:carte/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class ProfilePage extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            title: Center(child: Text('Logout')),
+            title: Center(child: Text('Logout', style: KTextStyle.titleBoldTeal,)),
             onTap: () {
               selectedPageNotifier.value = 0;
               Navigator.pushReplacement(

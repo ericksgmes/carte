@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class HeroWidget extends StatelessWidget {
-  const HeroWidget({super.key});
+  const HeroWidget({
+    super.key,
+    this.heightPercentageInDecimal = 1,
+    this.widthPercentageInDecimal = 1,
+    this.fit = BoxFit.fill,
+  });
+
+  final double heightPercentageInDecimal;
+  final double widthPercentageInDecimal;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +18,20 @@ class HeroWidget extends StatelessWidget {
       tag: 'hero1',
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: Image.asset('assets/images/bg_joao.jpg', color: Colors.purple, colorBlendMode: BlendMode.darken,),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Image.asset(
+              'assets/images/bg_macos.jpg',
+              color: Colors.purple,
+              colorBlendMode: BlendMode.darken,
+              fit: fit,
+              height:
+                  MediaQuery.of(context).size.height *
+                  heightPercentageInDecimal,
+            ),
+          ],
+        ),
       ),
     );
   }
