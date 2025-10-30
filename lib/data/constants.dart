@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+class KConstants {
+  static const String isDarkMode = 'isDarkMode';
+}
+
 class KTextStyle {
   static const TextStyle titleBoldTeal = TextStyle(
     color: Colors.teal,

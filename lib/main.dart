@@ -1,6 +1,8 @@
+import 'package:carte/data/constants.dart';
 import 'package:carte/data/notifiers.dart';
 import 'package:carte/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const Carte());
@@ -19,6 +21,18 @@ class Carte extends StatefulWidget {
 }
 
 class _CarteState extends State<Carte> {
+  @override
+  void initState() {
+    super.initState();
+    initThemeMode();
+  }
+
+  void initThemeMode() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool? repeat = prefs.getBool(KConstants.isDarkMode);
+    isDarkModeNotifier.value = repeat ?? false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
