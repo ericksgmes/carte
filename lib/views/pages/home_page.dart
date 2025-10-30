@@ -1,4 +1,4 @@
-import 'package:carte/data/constants.dart';
+import 'package:carte/views/widgets/card_widget.dart';
 import 'package:carte/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,29 +10,29 @@ class HomePage extends StatelessWidget {
     return SingleChildScrollView(
       child: Center(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               HeroWidget(heightPercentageInDecimal: 0.3),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Card(
-                  child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Basic layout',
-                          style: KTextStyle.titleBoldTeal,
-                        ),
-                        Text('Description of this', style: KTextStyle.descriptionText,),
-                      ],
-                    ),
-                  ),
-                ),
+              CardWidget(
+                title: 'João faz pudim',
+                description:
+                    'O pudim de leite condensado ficou muito bom segundo avaliações',
               ),
+              CardWidget(
+                title: 'Compraram comida',
+                description: 'Sim os cara compraram comida..',
+              ),
+              CardWidget(
+                title: 'Santos rebaixado',
+                description: 'Neymar fez mais um filho',
+              ),
+              ...List.generate(5, (index) {
+                return CardWidget(
+                  title: 'List item $index',
+                  description: 'Description of $index',
+                );
+              }),
             ],
           ),
         ),
