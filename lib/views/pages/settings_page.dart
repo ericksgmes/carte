@@ -47,6 +47,22 @@ class _SettingsPageState extends State<SettingsPage> {
                   child: Text("Open snackbar"),
                 ),
               ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Divider(
+                      color: Colors.teal,
+                      thickness: 5,
+                      endIndent: MediaQuery.of(context).size.width * 0.2,
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    child: VerticalDivider(color: Colors.purple, thickness: 3),
+                  ),
+                ],
+              ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 23.0),
                 child: ElevatedButton(
