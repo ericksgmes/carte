@@ -1,3 +1,5 @@
+import 'package:carte/data/constants.dart';
+import 'package:carte/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -21,12 +23,27 @@ class OnboardingPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              Text(
+                'This app is an app made with flutter bla bla bla john java fabio flutter santos silva',
+                style: KTextStyle.descriptionText,
+                textAlign: TextAlign.justify,
+              ),
+              SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginPage();
+                      },
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 40),
                 ),
-                child: Text('Confirm'),
+                child: Text('Register'),
               ),
             ],
           ),

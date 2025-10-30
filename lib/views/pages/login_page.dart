@@ -62,11 +62,11 @@ class _LoginPageState extends State<LoginPage> {
                 onEditingComplete: () {},
               ),
               SizedBox(height: 20),
-              ElevatedButton(
+              FilledButton(
                 onPressed: () {
                   onLoginPressed(context);
                 },
-                style: ElevatedButton.styleFrom(
+                style: FilledButton.styleFrom(
                   minimumSize: Size(double.infinity, 40),
                 ),
                 child: Text('Confirm'),
