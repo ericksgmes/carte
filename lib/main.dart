@@ -1,5 +1,5 @@
 import 'package:carte/data/notifiers.dart';
-import 'package:carte/views/widget_tree.dart';
+import 'package:carte/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,11 +28,11 @@ class _CarteState extends State<Carte> {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.teal,
+              seedColor: Colors.tealAccent,
               brightness: value ? Brightness.dark : Brightness.light,
             ),
           ),
-          home: WidgetTree(),
+          home: WelcomePage(),
         );
       },
     );

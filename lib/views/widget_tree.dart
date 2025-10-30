@@ -1,6 +1,7 @@
 import 'package:carte/data/notifiers.dart';
 import 'package:carte/views/pages/home_page.dart';
 import 'package:carte/views/pages/profile_page.dart';
+import 'package:carte/views/pages/settings_page.dart';
 import 'package:carte/views/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,19 @@ class WidgetTree extends StatelessWidget {
                 return Icon(isDarkMode ? Icons.dark_mode : Icons.light_mode);
               },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingsPage(title: 'Settings sex');
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ),
