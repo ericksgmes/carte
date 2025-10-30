@@ -1,5 +1,4 @@
 import 'package:carte/views/pages/login_page.dart';
-import 'package:carte/views/widget_tree.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

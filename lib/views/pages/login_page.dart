@@ -1,6 +1,6 @@
 import 'package:carte/views/widget_tree.dart';
-import 'package:carte/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -32,21 +32,12 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  HeroWidget(heightPercentageInDecimal: 0.3),
-                  FittedBox(
-                    child: Text(
-                      'Login Page',
-                      style: TextStyle(
-                        fontSize: 50,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
+              SizedBox(
+                child: Lottie.asset(
+                  'assets/lotties/house.json',
+                  fit: BoxFit.fitWidth,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                ),
               ),
               SizedBox(height: 20),
               TextField(

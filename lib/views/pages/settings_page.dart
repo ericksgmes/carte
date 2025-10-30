@@ -57,7 +57,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       endIndent: MediaQuery.of(context).size.width * 0.2,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 50,
                     child: VerticalDivider(color: Colors.purple, thickness: 3),
                   ),
