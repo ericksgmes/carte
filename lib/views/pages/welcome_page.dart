@@ -1,4 +1,5 @@
 import 'package:carte/views/pages/login_page.dart';
+import 'package:carte/views/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -40,7 +41,7 @@ class WelcomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginPage();
+                          return OnboardingPage();
                         },
                       ),
                     );
@@ -51,7 +52,7 @@ class WelcomePage extends StatelessWidget {
                       40,
                     ),
                   ),
-                  child: Text('Register'),
+                  child: Text('Get Started'),
                 ),
               ),
               TextButton(
