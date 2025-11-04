@@ -12,8 +12,16 @@ class ProfilePage extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: Column(
         children: [
+          CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage('assets/images/bg_joao.jpg'),
+          ),
+          SizedBox(height: 10,),
           ListTile(
-            title: Center(child: Text('Logout', style: KTextStyle.titleBoldTeal,)),
+            title: Align(
+              alignment: AlignmentGeometry.centerLeft,
+              child: Text('Logout', style: KTextStyle.titleBoldTeal),
+            ),
             onTap: () {
               selectedPageNotifier.value = 0;
               Navigator.pushReplacement(
