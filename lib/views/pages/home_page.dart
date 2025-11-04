@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              SizedBox(height: 10,),
+              SizedBox(height: 10, width: MediaQuery.of(context).size.width,),
               HeroWidget(heightPercentageInDecimal: 0.3),
               CardWidget(
                 title: 'João faz pudim',

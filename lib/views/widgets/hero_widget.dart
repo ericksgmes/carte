@@ -5,7 +5,7 @@ class HeroWidget extends StatelessWidget {
     super.key,
     this.heightPercentageInDecimal = 1,
     this.widthPercentageInDecimal = 1,
-    this.fit = BoxFit.fill,
+    this.fit = BoxFit.cover,
   });
 
   final double heightPercentageInDecimal;
@@ -14,23 +14,34 @@ class HeroWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: 'hero1',
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image.asset(
-              'assets/images/bg_macos.jpg',
-              fit: fit,
-              height:
-                  MediaQuery.of(context).size.height *
-                  heightPercentageInDecimal,
+    return LayoutBuilder(
+      builder: (context, c) {
+        final screen = MediaQuery.sizeOf(context);
+        final desiredH = screen.height * heightPercentageInDecimal;
+        
+        final maxH = c.maxHeight.isFinite ? c.maxHeight : desiredH;
+        final h = desiredH <= maxH ? desiredH : maxH;
+
+        final w = c.maxWidth.isFinite ? c.maxWidth : screen.width * widthPercentageInDecimal;
+
+        return Hero(
+          tag: 'hero1',
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: SizedBox(
+              height: h,
+              width: w,
+              child: Image.asset(
+                'assets/images/bg_macos.jpg',
+                fit: fit, // cover/contain/fill…
+                color: Colors.purple.withValues(alpha: 0.4),
+                colorBlendMode: BlendMode.darken,
+              ),
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
+
