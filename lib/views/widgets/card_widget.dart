@@ -23,10 +23,11 @@ class CardWidget extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(top: 8),
         child: Card(
+          margin: EdgeInsets.zero,
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
