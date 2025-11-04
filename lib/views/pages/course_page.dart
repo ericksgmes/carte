@@ -2,12 +2,17 @@ import 'package:carte/data/constants.dart';
 import 'package:carte/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 
-class CoursePage extends StatelessWidget {
+class CoursePage extends StatefulWidget {
   const CoursePage({super.key, required this.title, required this.description});
 
   final String title;
   final String description;
 
+  @override
+  State<CoursePage> createState() => _CoursePageState();
+}
+
+class _CoursePageState extends State<CoursePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +27,8 @@ class CoursePage extends StatelessWidget {
                   heightPercentageInDecimal: 0.15,
                 ),
               ),
-              Text(title, style: KTextStyle.titleBoldTeal),
-              Text(description, style: KTextStyle.descriptionText),
+              Text(widget.title, style: KTextStyle.titleBoldTeal),
+              Text(widget.description, style: KTextStyle.descriptionText),
               Divider(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
