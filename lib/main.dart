@@ -2,9 +2,13 @@ import 'package:carte/data/constants.dart';
 import 'package:carte/data/notifiers.dart';
 import 'package:carte/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  debugPaintBaselinesEnabled = false;
+  debugPaintSizeEnabled = false;
+  debugPaintPointersEnabled = false;
   runApp(const Carte());
 }
 

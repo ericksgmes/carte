@@ -1,4 +1,5 @@
 import 'package:carte/data/constants.dart';
+import 'package:carte/views/pages/course_page.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
@@ -9,18 +10,30 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.only(top: 10),
-      child: Card(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: KTextStyle.titleBoldTeal),
-              Text(description, style: KTextStyle.descriptionText),
-            ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return CoursePage(title: title, description: description);
+            },
+          ),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.only(top: 10),
+        child: Card(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: KTextStyle.titleBoldTeal),
+                Text(description, style: KTextStyle.descriptionText),
+              ],
+            ),
           ),
         ),
       ),
