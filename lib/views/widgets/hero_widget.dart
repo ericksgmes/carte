@@ -23,8 +23,6 @@ class HeroWidget extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/bg_macos.jpg',
-              color: Colors.teal[400],
-              colorBlendMode: BlendMode.darken,
               fit: fit,
               height:
                   MediaQuery.of(context).size.height *
