@@ -1,4 +1,5 @@
-import 'dart:convert' as convert;import 'package:carte/data/constants.dart';
+import 'dart:convert' as convert;
+import 'package:carte/data/constants.dart';
 import 'package:carte/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +15,6 @@ class CoursePage extends StatefulWidget {
 }
 
 class _CoursePageState extends State<CoursePage> {
-  
   @override
   void initState() {
     getData();
@@ -22,16 +22,18 @@ class _CoursePageState extends State<CoursePage> {
   }
 
   void getData() async {
-    var url = Uri.https('bored-api.appbrewery.com', '/random');
-    var response = await http.get(url);
-    if (response.statusCode == 200) {
-      var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
-      var itemCount = jsonResponse['activity'];
-      print(itemCount);
-    } else {
-      print('Request failed with status: ${response.statusCode}');
+    while (true) {
+      var url = Uri.https('bored-api.appbrewery.com', '/random');
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        var jsonResponse =
+            convert.jsonDecode(response.body) as Map<String, dynamic>;
+        var itemCount = jsonResponse['activity'];
+        print(itemCount);
+      } else {
+        print('Request failed with status: ${response.statusCode}');
+      }
     }
-
   }
 
   @override
@@ -46,9 +48,7 @@ class _CoursePageState extends State<CoursePage> {
               children: [
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width * 0.8,
-                  child: HeroWidget(
-                    heightPercentageInDecimal: 0.15,
-                  ),
+                  child: HeroWidget(heightPercentageInDecimal: 0.15),
                 ),
                 Text(widget.title, style: KTextStyle.titleBoldTeal),
                 Text(widget.description, style: KTextStyle.descriptionText),
